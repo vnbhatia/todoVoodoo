@@ -1,0 +1,29 @@
+<section id="todolist-view" class="container-fluid">
+
+    <h1>Todo List</h1>
+    <form name="todoListForm" ng-controller="TodoListController as todoCtrl"
+    ng-submit="todoListForm.$valid && todoCtrl.addTodo()" novalidate>
+      <label>Description:</label>
+      <input ng-model="todoCtrl.todo.description" required />
+
+      <label>Due Date:</label>
+      <input ng-model="todoCtrl.todo.dueDate" required type="date" />
+
+      <blockquote>
+        <em>Preview<em/><br/>
+        <b>Description: {{todoCtrl.todo.description}}</b>
+        Due: {{todoCtrl.todo.dueDate}}
+      </blockquote>
+
+
+      <input type="submit" value="Add"/>
+    </form>
+    <br/>
+
+
+    <blockquote ng-repeat="todo in todoCtrl.todos">
+      <b>Description: {{todo.description}}</b> due
+      {{todo.dueDate}}
+    </blockquote>
+
+</section>
