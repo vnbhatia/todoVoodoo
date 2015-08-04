@@ -1,20 +1,5 @@
-# Angular Template
-This template provides a starter project that implements best practices in coding, building and testing AngularJS applications. Features include:
-- A well-organized component hierarchy starting from `approot`. Components are implemented using directives (no dangling controllers). This provides a good architectural direction until Angular 2.0 becomes available.
-- Follows AngularJS style guidelines (e.g. `controller as` syntax).
-- Uses [AngularUI Router](https://github.com/angular-ui/ui-router) for flexible routing and nested views.
-- Uses [Angular Bootstrap](http://angular-ui.github.io/bootstrap/) to remove dependencies on jQuery and Bootstrap’s JavaScript.
-- Provides logging and exception handling frameworks with toaster notifications.
-- Provides a Gulp based build system – code changes are reflected in the browser immediately.
-- Uses Karma, Mocha and Chai for testing.
-- Allows front-end development to proceed independently of the back-end by providing a mock server to serve an API and the sample data.
-
-### Further Reading
-Visit our [wiki](https://github.com/archfirst/angular-template/wiki) for detailed concepts and useful recipes for extending the template.
-
-Check out the following projects to see how this template can be used to build real applications:
-- [Manage My Money Client](https://github.com/archfirst/manage-my-money-client) (AngularJS best practices)
-- [Manage My Money Server](https://github.com/archfirst/manage-my-money-server) (Node.js, REST and DDD best practices)
+# TodoVoodoo
+This is a simple Angular todo list app I'm building to learn Angular. The structure comes from the [ArchFirst Angular template](https://github.com/archfirst/angular-template).
 
 ## Requirements
 
@@ -91,9 +76,9 @@ Below this level you will find various folders that arrange the application's fu
 
 - `framework:` Container for reusable services such as logging, exception handling, routing, security, local storage etc. These services are expected to work out-of-the-box without any changes for most applications. The template provides sample implementations for the first three. (This folder is called `blocks` in the gulp-patterns project.)
 
-- `core:` Contains functionality that is shared across the application and will probably need customization for a specific application. This includes directives, filters and services and styles common to the entire application.
+- `core:` Contains functionality that is shared across the application. This includes directives, filters and services and styles common to the entire application.
 
-- `components:` Contains all the components of the application. We recommend thinking of an Angular application as a tree of components, starting with the `app` component as the root of this tree.
+- `components:` Contains all the components of the application, with the `app` component as the root of this tree.
 
 - `images:` Images used in the application.
 
@@ -234,6 +219,3 @@ Below this level you will find various folders that arrange the application's fu
 - `gulp serve-build --debug-brk`
 
     Launch debugger and break on 1st line with node-inspector.
-
-## Credits
-This template is heavily influenced by John Papa's [AngularJS Style Guide](https://github.com/johnpapa/angularjs-styleguide) and his [Gulp Patterns](https://github.com/johnpapa/gulp-patterns) project. I would like to take this opportunity to thank John for providing these excellent resources to make our jobs easier and more enjoyable.
