@@ -1,8 +1,8 @@
-<section id="todolist-view" class="container-fluid">
+<section id="todolist-view" class="container-fluid" ng-controller="TodoListController as todoCtrl">
 
     <h1>Todo List</h1>
-    <form name="todoListForm" ng-controller="TodoListController as todoCtrl"
-    ng-submit="todoListForm.$valid && todoCtrl.addTodo()" novalidate>
+    <form name="todoListForm"
+    ng-submit="todoListForm.$valid && todoCtrl.addTodo(todoCtrl.todo)" novalidate>
       <label>Description:</label>
       <input ng-model="todoCtrl.todo.description" required />
 

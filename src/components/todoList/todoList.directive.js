@@ -34,6 +34,10 @@
 
         activate();
 
+        var vm = this;
+        vm.addTodo = addTodo;
+        vm.todos = []
+
         function activate() {
             self.todos = [{'description': 'test', 'dueDate': '3/4/15'}];
             logger.log('Activated TodoList View');
@@ -41,7 +45,7 @@
 
         function addTodo(todo) {
           logger.log('Called Add Todo function');
-          self.todos.push({'description': 'test', 'dueDate': '3/4/15'});
+          vm.todos.push({'description': todo.description, 'dueDate': todo.dueDate});
         }
     }
 
