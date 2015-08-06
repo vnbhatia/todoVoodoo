@@ -9,21 +9,23 @@
       <label>Due Date:</label>
       <input ng-model="todoCtrl.todo.dueDate" required type="date" />
 
-      <blockquote>
-        <em>Preview<em/><br/>
-        <b>Description: {{vm.todo.description}}</b>
-        Due: {{vm.todo.dueDate}}
-      </blockquote>
-
-
       <input type="submit" value="Add"/>
     </form>
     <br/>
 
-
-    <blockquote ng-repeat="todo in vm.todos">
-      <b>Description: {{todo.description}}</b> due
-      {{todo.dueDate}}
-    </blockquote>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <tr>
+          <th>Completed?</th>
+          <th>Description</th>
+          <th>Due Date</th>
+        </tr>
+        <tr ng-repeat="todo in vm.todos">
+          <td>j</td>
+          <td>{{todo.description}}</td>
+          <td>{{todo.dueDate}}</td>
+        </tr>
+      </table>
+    </div>
 
 </section>
