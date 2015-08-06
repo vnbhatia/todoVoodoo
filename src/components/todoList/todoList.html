@@ -1,8 +1,8 @@
-<section id="todolist-view" class="container-fluid" ng-controller="TodoListController as todoCtrl">
+<section id="todolist-view" class="container-fluid">
 
     <h1>Todo List</h1>
     <form name="todoListForm"
-    ng-submit="todoListForm.$valid && todoCtrl.addTodo(todoCtrl.todo)" novalidate>
+    ng-submit="todoListForm.$valid && vm.addTodo(todoCtrl.todo)" novalidate>
       <label>Description:</label>
       <input ng-model="todoCtrl.todo.description" required />
 
@@ -11,8 +11,8 @@
 
       <blockquote>
         <em>Preview<em/><br/>
-        <b>Description: {{todoCtrl.todo.description}}</b>
-        Due: {{todoCtrl.todo.dueDate}}
+        <b>Description: {{vm.todo.description}}</b>
+        Due: {{vm.todo.dueDate}}
       </blockquote>
 
 
@@ -21,7 +21,7 @@
     <br/>
 
 
-    <blockquote ng-repeat="todo in todoCtrl.todos">
+    <blockquote ng-repeat="todo in vm.todos">
       <b>Description: {{todo.description}}</b> due
       {{todo.dueDate}}
     </blockquote>
