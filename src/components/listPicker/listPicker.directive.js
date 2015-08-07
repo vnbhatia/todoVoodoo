@@ -27,15 +27,26 @@
 
 
     // ----- ControllerFunction -----
-    ControllerFunction.$inject = ['logger'];
+    ControllerFunction.$inject = ['logger', '$http'];
 
     /* @ngInject */
-    function ControllerFunction(logger) {
+    function ControllerFunction(logger, $http) {
 
         activate();
+        var vm = this;
+
+        vm.lists = [];
+        $http.get('/todoLists.json').success(function(data) {
+          listController.lists = data;
+          logger.log('Successfully read todoLists.json');
+        });
+
+        //vm.lists = ['Work', 'Chores', 'Ideas', 'Car'];
 
         function activate() {
             logger.log('Activated ListPicker View');
+
+
         }
     }
 

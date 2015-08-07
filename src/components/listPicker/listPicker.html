@@ -1,9 +1,8 @@
 <div class="col-sm-3 col-md-2 sidebar">
   <ul class="nav nav-sidebar">
-    <li>list</li>
-    <li ng-repeat="list in listController.lists"
-        ng-class="{active:listCtrl.isSelected(list.name)}"
-        ng-click="listCtrl.selectListIndex(list.name)">
+    <li ng-repeat="list in vm.lists"
+        ng-class="{active:vm.isSelected(list.name)}"
+        ng-click="vm.selectListIndex(list.name)">
       <a href="#">{{list.name}}</a>
     </li>
   </ul>
