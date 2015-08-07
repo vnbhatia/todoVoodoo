@@ -32,20 +32,22 @@
     /* @ngInject */
     function ControllerFunction(logger) {
 
-        activate();
-
         var vm = this;
-        vm.addTodo = addTodo;
-        vm.todos = []
+        activate(vm);
 
-        function activate() {
-            self.todos = [{'description': 'test', 'dueDate': '3/4/15'}];
+        function activate(vm) {
+            vm.addTodo = addTodo;
+            vm.todo = {'description': '', 'dueDate': new Date()};
+            vm.todos = [{'description': 'test', 'dueDate': new Date()}];
+
             logger.log('Activated TodoList View');
         }
 
         function addTodo(todo) {
           logger.log('Called Add Todo function');
           vm.todos.push({'description': todo.description, 'dueDate': todo.dueDate});
+
+          vm.todo = {'description': '', 'dueDate': new Date()}; // reset input fields' model
         }
     }
 
