@@ -86,6 +86,16 @@ body {
 
 
 /*
+ * Todo list items
+ */
+tr.done,td.done {
+  background-color: #fafafa !important;
+  color: #999;
+  text-decoration:line-through;
+}
+
+
+/*
  * Placeholder dashboard ideas
  */
 
