@@ -32,21 +32,36 @@
     /* @ngInject */
     function ControllerFunction(logger, $http) {
 
-        activate();
         var vm = this;
+        vm.isSelected = isSelected;
+        vm.selectList = selectList;
+        vm.selectedList = null;
 
         vm.lists = [];
-        $http.get('/todoLists.json').success(function(data) {
-          listController.lists = data;
-          logger.log('Successfully read todoLists.json');
+        $http.get('src/todoLists.json').success(function(data) {
+          vm.lists = data;
+          logger.log('Successfully read ' + vm.lists.length + ' lists from todoLists.json');
         });
 
-        //vm.lists = ['Work', 'Chores', 'Ideas', 'Car'];
+        activate(vm);
 
-        function activate() {
+
+        function activate(vm) {
             logger.log('Activated ListPicker View');
 
+            if (vm.lists.length > 0)
+              selectList(vm.lists[0]);
+        }
 
+        function isSelected(listItem) {
+          if (listItem == vm.selectedList)
+            return true;
+          else
+            return false;
+        }
+
+        function selectList(listItem) {
+          vm.selectedList = listItem;
         }
     }
 
