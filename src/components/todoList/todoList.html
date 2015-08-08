@@ -13,14 +13,14 @@
     </form>
     <br/>
 
-    <div class="table-responsive">
+    <div class="table-responsive todo-table">
       <table class="table table-striped">
         <tr>
           <th></th>
           <th>Description</th>
           <th>Due Date</th>
         </tr>
-        <tr ng-repeat="todo in vm.todos" ng-class="{done: todo.isDone}">
+        <tr ng-repeat="todo in vm.todos | orderBy: ['isDone', 'dueDate']" class="todo-item" ng-class="{done: todo.isDone}">
           <td style="text-align:center"><input type="checkbox" ng-model="todo.isDone" ng-checked="{{todo.isDone}}"/></td>
           <td>{{todo.description}}</td>
           <td>{{todo.dueDate | date}}</td>

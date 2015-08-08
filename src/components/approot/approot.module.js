@@ -2,6 +2,6 @@
     'use strict';
 
     angular.module('app.approot', [
-        'app.core'
+        'app.core', 'ngAnimate'
     ]);
 })();
