@@ -94,7 +94,7 @@ body {
   opacity: 0;
 }
 
-.todo-item.ng-enter.ng-enter-active, .todo-item.ng-move.ng-move-active {
+.todo-item.ng-enter-active, .todo-item.ng-move-active {
 	opacity: 1;
 }
 
