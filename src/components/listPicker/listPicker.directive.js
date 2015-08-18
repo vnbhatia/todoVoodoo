@@ -1,4 +1,4 @@
-(function () {
+(function() {
 
     'use strict';
 
@@ -16,8 +16,7 @@
         var directive = {
             restrict: 'E',
             templateUrl: 'components/listPicker/listPicker.html',
-            scope: {
-            },
+            scope: {},
             controller: 'ListPickerController',
             controllerAs: 'vm'
         };
@@ -39,8 +38,8 @@
 
         vm.lists = [];
         $http.get('src/todoLists.json').success(function(data) {
-          vm.lists = data;
-          logger.log('Successfully read ' + vm.lists.length + ' lists from todoLists.json');
+            vm.lists = data;
+            logger.log('Successfully read ' + vm.lists.length + ' lists from todoLists.json');
         });
 
         activate(vm);
@@ -49,19 +48,21 @@
         function activate(vm) {
             logger.log('Activated ListPicker View');
 
-            if (vm.lists.length > 0)
-              selectList(vm.lists[0]);
+            if (vm.lists.length > 0) {
+                selectList(vm.lists[0]);
+            }
         }
 
         function isSelected(listItem) {
-          if (listItem == vm.selectedList)
-            return true;
-          else
-            return false;
+            if (listItem === vm.selectedList) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
         function selectList(listItem) {
-          vm.selectedList = listItem;
+            vm.selectedList = listItem;
         }
     }
 
