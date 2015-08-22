@@ -15,7 +15,7 @@
 
         var directive = {
             restrict: 'E',
-            templateUrl: 'components/listPicker/listPicker.html',
+            templateUrl: 'components/list-picker/list-picker.html',
             scope: {},
             controller: 'ListPickerController',
             controllerAs: 'vm'
@@ -37,7 +37,7 @@
         vm.selectedList = null;
 
         vm.lists = [];
-        $http.get('src/todoLists.json').success(function(data) {
+        $http.get('src/todo-lists.json').success(function(data) {
             vm.lists = data;
             logger.log('Successfully read ' + vm.lists.length + ' lists from todoLists.json');
         });

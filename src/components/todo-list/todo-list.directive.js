@@ -15,7 +15,7 @@
 
         var directive = {
             restrict: 'E',
-            templateUrl: 'components/todoList/todoList.html',
+            templateUrl: 'components/todo-list/todo-list.html',
             scope: {},
             controller: 'TodoListController',
             controllerAs: 'vm'
