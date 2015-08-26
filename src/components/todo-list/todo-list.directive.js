@@ -32,9 +32,9 @@
     function ControllerFunction(logger) {
 
         var vm = this;
-        activate(vm);
+        activate();
 
-        function activate(vm) {
+        function activate() {
             vm.addTodo = addTodo;
             vm.todo = {
                 'description': '',

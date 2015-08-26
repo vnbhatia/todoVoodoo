@@ -1,22 +1,22 @@
 [
   {
     "name": "Work",
-    "items": []
+    "todos": []
   },
   {
     "name": "House chores",
-    "items": []
+    "todos": []
   },
   {
     "name": "School Work",
-    "items": []
+    "todos": []
   },
   {
     "name": "Blog",
-    "items": []
+    "todos": []
   },
   {
     "name": "Kids",
-    "items": []
+    "todos": []
   }
 ]

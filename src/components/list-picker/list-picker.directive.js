@@ -26,43 +26,47 @@
 
 
     // ----- ControllerFunction -----
-    ControllerFunction.$inject = ['logger', '$http'];
+    ControllerFunction.$inject = ['logger', '$http', 'todoListService'];
 
     /* @ngInject */
-    function ControllerFunction(logger, $http) {
+    function ControllerFunction(logger, $http, todoListService) {
 
         var vm = this;
         vm.isSelected = isSelected;
-        vm.selectList = selectList;
-        vm.selectedList = null;
+        vm.selectProject = selectProject;
+        vm.selectedProject = null;
 
-        vm.lists = [];
-        $http.get('src/todo-lists.json').success(function(data) {
-            vm.lists = data;
-            logger.log('Successfully read ' + vm.lists.length + ' lists from todoLists.json');
-        });
+        activate();
 
-        activate(vm);
+        function activate() {
+            return getProjects().then(function() {
+                logger.log('Successfully read ' + vm.projects.length + ' projects from todoListService');
 
-
-        function activate(vm) {
-            logger.log('Activated ListPicker View');
-
-            if (vm.lists.length > 0) {
-                selectList(vm.lists[0]);
-            }
+                // Select the first list in the set of lists
+                if (vm.projects.length > 0) {
+                    selectProject(vm.projects[0]);
+                }
+            });
         }
 
-        function isSelected(listItem) {
-            if (listItem === vm.selectedList) {
+        function getProjects() {
+            return todoListService.getProjects().then(function(data) {
+                vm.projects = data;
+                return vm.projects;
+            });
+        }
+
+
+        function isSelected(project) {
+            if (project === vm.selectedProject) {
                 return true;
             } else {
                 return false;
             }
         }
 
-        function selectList(listItem) {
-            vm.selectedList = listItem;
+        function selectProject(project) {
+            vm.selectedProject = project;
         }
     }
 

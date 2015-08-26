@@ -3,10 +3,10 @@ module.exports = function(app) {
     var data = '/../../data/';
     var jsonfileservice = require('./utils/jsonfileservice')();
 
-    app.get(api + '/test-data', getTestData);
+    app.get(api + '/projects', getTodoLists);
 
-    function getTestData(req, res, next) {
-        var json = jsonfileservice.getJsonFromFile(data + 'test-data.json');
+    function getTodoLists(req, res, next) {
+        var json = jsonfileservice.getJsonFromFile(data + 'todo-lists.json');
         res.send(json);
     }
 };
