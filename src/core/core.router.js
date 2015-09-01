@@ -17,7 +17,7 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                template: '<div><a href="/projects">Go to projects</a></div>'//'<tmpl-home></tmpl-home>'
+                template: '<div class="container-fluid"><div class="row main"><a href="/projects">Go to projects</a></div></div>'//'<tmpl-home></tmpl-home>'
             })
             .state('projects', {
                 url: '/projects',

@@ -9,6 +9,6 @@
         'app.approot',
         'app.projects',
         'app.projectDetail',
-        'app.topnav',
+        'app.topnav'
     ]);
 })();
