@@ -9,6 +9,6 @@
         'app.approot',
         'app.todoList',
         'app.topnav',
-        'app.listPicker'
+        'app.projects'
     ]);
 })();

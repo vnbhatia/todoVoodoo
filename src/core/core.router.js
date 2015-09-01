@@ -17,7 +17,7 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                template: '<tmpl-todo-list></tmpl-todo-list>'
+                template: '<div><a href="/projects">Go to projects</a></div>'//'<tmpl-home></tmpl-home>'
             })
             .state('projects', {
                 url: '/projects',
@@ -25,7 +25,7 @@
             })
             .state('projects.detail', {
                 url: '/:projectID',
-                template: '<tmpl-projects-detail></tmpl-project-detail>'
+                template: '<tmpl-project-detail></tmpl-project-detail>'
             });
     }
 })();
