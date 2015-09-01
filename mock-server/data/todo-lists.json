@@ -1,7 +1,18 @@
 [
   {
     "name": "Work",
-    "todos": []
+    "todos": [
+        {
+          "description": "Fill out TPS reports",
+          "dueDate": "10/1/2015",
+          "isDone": false
+        },
+        {
+          "description": "Mimiograph my bottom",
+          "dueDate": "10/15/2015",
+          "isDone": false
+        }
+    ]
   },
   {
     "name": "House chores",
