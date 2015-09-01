@@ -24,7 +24,7 @@
                 template: '<tmpl-projects></tmpl-projects>'
             })
             .state('projects.detail', {
-                url: '/:projectID',
+                url: '/:projectName',
                 template: '<tmpl-project-detail></tmpl-project-detail>'
             });
     }
