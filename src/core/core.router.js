@@ -25,7 +25,7 @@
             })
             .state('projects.detail', {
                 url: '/:projectID',
-                template: '<tmpl-todo-list></tmpl-todo-list>'//'<tmpl-project-detail></tmpl-project-detail>'
+                template: '<tmpl-project-detail></tmpl-project-detail>'
             });
     }
 })();

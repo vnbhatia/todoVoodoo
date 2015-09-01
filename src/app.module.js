@@ -7,8 +7,8 @@
 
         // Features (listed alphabetically)
         'app.approot',
-        'app.todoList',
         'app.topnav',
-        'app.projects'
+        'app.projects',
+        'app.projectDetail',
     ]);
 })();
