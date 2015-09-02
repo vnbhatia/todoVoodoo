@@ -1,0 +1,12 @@
+<div class="col-sm-3 col-md-2 sidebar">
+  <ul class="nav nav-sidebar">
+    <li ng-repeat="project in vm.projects"
+        ng-class="{active:vm.isSelected(project)}"
+        ng-click="vm.selectProject(project)">
+      <a href="/projects/{{project.name}}">{{project.name}}</a>
+    </li>
+  </ul>
+</div>
+
+<div ui-view class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+</div>
