@@ -44,13 +44,22 @@
                 'dueDate': new Date(),
                 'isDone': false
             };
-            vm.todos = [{ // TODO: get todos from todoListService
-                'description': 'test',
-                'dueDate': new Date(),
-                'isDone': true
-            }];
-
+            vm.todos = [];
             logger.log('Activated ProjectDetail View');
+
+            // Retrieve the todos of that project and save it to the view model
+            todoListService.getProjects().then(function(projects) {
+                for (var i = 0; i < projects.length; i++) {
+                  if (projects[i].name === vm.projectName) {
+                    vm.project = projects[i]; // TODO: get todos index for selected project
+                    vm.todos = vm.project.todos;
+
+                    logger.log(JSON.stringify(vm.todos));
+                    break;
+                  }
+                }
+                return vm.todos;
+            });
         }
 
         function addTodo(todo) {
