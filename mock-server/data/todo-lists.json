@@ -16,7 +16,22 @@
   },
   {
     "name": "House chores",
-    "todos": []
+    "todos": [
+          {
+            "description": "Laundry",
+            "dueDate": "11/1/2015",
+            "isDone": true
+          },
+          {
+            "description": "Cook",
+            "dueDate": "1/2/2016",
+            "isDone": false
+          },
+          {
+            "description": "Groceries",
+            "dueDate": "12/8/2015",
+            "isDone": false
+          }]
   },
   {
     "name": "School Work",
@@ -24,7 +39,13 @@
   },
   {
     "name": "Blog",
-    "todos": []
+    "todos": [
+        {
+          "description": "Upgrade WordPress version",
+          "dueDate": "1/13/2016",
+          "isDone": false
+        }
+    ]
   },
   {
     "name": "Kids",
