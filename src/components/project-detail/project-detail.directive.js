@@ -75,6 +75,9 @@
                 'dueDate': new Date(),
                 'isDone': false
             }; // reset input fields' model
+
+            // Save project
+            todoListService.saveProject(vm);
         }
     }
 

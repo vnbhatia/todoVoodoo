@@ -12,15 +12,15 @@
     function serviceFunction($http, $location, $cacheFactory, exception, api, _) {
         var service = {
             getProjects: getProjects,
-            saveProjects: saveProjects,
+            saveProject: saveProject,
             clearCache: clearCache
         };
 
         return service;
 
         /**
-         * Get all accounts.
-         * @return {Promise} A promise that returns an array of accounts if resolved
+         * Get all projects.
+         * @return {Promise} A promise that returns an array of projects if resolved
          */
         function getProjects() {
             return $http.get(api + '/projects', { cache: true })
@@ -40,16 +40,16 @@
             }
         }
 
-        function saveProjects(account) {
+        function saveProject(project) {
 
-            // Prepare account for transmission
-            var accountXmt = {
-                id: account.id,
-                name: account.name
+            // Prepare project for transmission
+            var projectXmt = {
+                name: project.projectName,
+                todos: project.todos
             };
 
-            if (!accountXmt.id) {
-                return $http.post(api + '/projects', accountXmt)
+            if (!projectXmt.name) {
+                return $http.post(api + '/projects', projectXmt)
                     .then(saveProjectsSuccess)
                     .catch(function(message) {
                         exception.catcher('XHR Failed for saveProjects')(message);
@@ -57,7 +57,7 @@
                     });
             }
             else {
-                return $http.put(api + '/projects/' + accountXmt.id, accountXmt)
+                return $http.put(api + '/projects/' + projectXmt.name, projectXmt)
                     .then(saveProjectsSuccess)
                     .catch(function(message) {
                         exception.catcher('XHR Failed for saveProjects')(message);
@@ -72,7 +72,7 @@
 
         function clearCache() {
             var cache = $cacheFactory.get('$http');
-            cache.remove(api + '/todolists');
+            cache.remove(api + '/projects');
         }
     }
 })();
